@@ -1,0 +1,26 @@
+# Review Render's current service and disk charges before creating this Blueprint.
+# One instance only: SQLite lives on this service's persistent disk.
+services:
+  - type: web
+    name: acme-compensation
+    runtime: docker
+    plan: starter
+    region: singapore
+    numInstances: 1
+    healthCheckPath: /health
+    autoDeployTrigger: off
+    disk:
+      name: acme-salary-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_ORIGIN
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_PATH
+        value: /var/data/acme.sqlite3
+      - key: SEED_DEMO
+        value: "1"
