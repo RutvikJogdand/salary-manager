@@ -10,3 +10,4 @@ data/
 *.sqlite*
 *.log
 .DS_Store
+*.tsbuildinfo

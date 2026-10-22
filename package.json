@@ -1,0 +1,14 @@
+{
+  "name": "acme-compensation",
+  "version": "1.0.0",
+  "description": "ACME employee salary management assessment",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm --prefix frontend run build",
+    "test": ".venv/bin/python -m pytest && npm --prefix frontend test"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs"
+}
