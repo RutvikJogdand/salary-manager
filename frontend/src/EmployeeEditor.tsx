@@ -100,7 +100,7 @@ export function EmployeeForm({
           <input
             required
             disabled={!!employee}
-            pattern="[A-Za-z0-9][A-Za-z0-9_-]{1,31}"
+            pattern="[A-Za-z0-9](?:[A-Za-z0-9]|_|-){1,31}"
             value={form.employee_code}
             onChange={(e) => change("employee_code", e.target.value)}
             placeholder="e.g. ACME-10001"
@@ -262,6 +262,7 @@ export function EmployeeEditor({
     <dialog
       ref={dialog}
       className="employee-dialog"
+      aria-labelledby="employee-dialog-title"
       onClose={close}
       onCancel={(event) => {
         event.preventDefault();
@@ -271,7 +272,7 @@ export function EmployeeEditor({
       <div className="dialog-head">
         <div>
           <div className="eyebrow">PEOPLE & PAY</div>
-          <h2>
+          <h2 id="employee-dialog-title">
             {employeeId === "new"
               ? "Add an employee"
               : detail.data?.employee.name || "Employee details"}

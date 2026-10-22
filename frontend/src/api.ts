@@ -63,7 +63,9 @@ export function useResource<T>(path: string | null, revision = 0) {
     const controller = new AbortController();
     setState({ key, loading: true });
     api<T>(path, { signal: controller.signal })
-      .then((data) => setState({ key, data, loading: false }))
+      .then((data) => {
+        if (!controller.signal.aborted) setState({ key, data, loading: false });
+      })
       .catch((error) => {
         if (!controller.signal.aborted)
           setState({ key, error: error.message, loading: false });

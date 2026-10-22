@@ -2095,34 +2095,115 @@ tbody tr:hover {
 }
 
 /* Reading-size text and stronger contrast for a day-to-day HR workspace. */
-nav button { font-size: 13px; }
-.page-heading p, .field-hint, .panel-head p, .table-meta, .stat-note,
-.pagination, .activity-text p, .activity-text small, .step-head p,
-.import-help p, .import-help ol, .import-help .field-hint,
-.login-form > p, .login-note, .history-event small, .history-event p {
+nav button {
+  font-size: 13px;
+}
+.page-heading p,
+.field-hint,
+.panel-head p,
+.table-meta,
+.stat-note,
+.pagination,
+.activity-text p,
+.activity-text small,
+.step-head p,
+.import-help p,
+.import-help ol,
+.import-help .field-hint,
+.login-form > p,
+.login-note,
+.history-event small,
+.history-event p {
   color: #6b775e;
   font-size: 11px;
 }
-.stat-label, .bar-label, .bar-amount { color: #637351; font-size: 11px; }
-.select-field, .basis, .breadcrumb, .today, .demo-label { color: #65745a; }
-.select-field > span, .filters .select-field > span { font-size: 10px; }
-.select-field select, .filters .select-field select { font-size: 11px; }
-th { font-size: 11px; color: #69785d; }
-td { font-size: 12px; color: #586c49; }
-td small, .person strong { font-size: 11px; }
-td small, .bar-label small, .page-footer { color: #6d7a61; }
-.status { font-size: 10px; color: #527037; }
-.status.inactive { color: #626b56; }
-.context-card p, .context-line { font-size: 11px; color: #c0cfb4; }
-.panel-foot { color: #6e7c60; font-size: 10px; }
-.button { font-size: 12px; }
-.sidebar-bottom small, .workspace-switch small { color: #6f7b66; font-size: 10px; }
-.sidebar-note p { color: #707d5f; }
-.info-note { color: #677a4f; font-size: 11px; }
-.upload-zone > span:last-of-type { color: #6b7b59; font-size: 11px; }
+.stat-label,
+.bar-label,
+.bar-amount {
+  color: #637351;
+  font-size: 11px;
+}
+.select-field,
+.basis,
+.breadcrumb,
+.today,
+.demo-label {
+  color: #65745a;
+}
+.select-field > span,
+.filters .select-field > span {
+  font-size: 10px;
+}
+.select-field select,
+.filters .select-field select {
+  font-size: 11px;
+}
+th {
+  font-size: 11px;
+  color: #69785d;
+}
+td {
+  font-size: 12px;
+  color: #586c49;
+}
+td small,
+.person strong {
+  font-size: 11px;
+}
+td small,
+.bar-label small,
+.page-footer {
+  color: #6d7a61;
+}
+.status {
+  font-size: 10px;
+  color: #527037;
+}
+.status.inactive {
+  color: #626b56;
+}
+.context-card p,
+.context-line {
+  font-size: 11px;
+  color: #c0cfb4;
+}
+.panel-foot {
+  color: #6e7c60;
+  font-size: 10px;
+}
+.button {
+  font-size: 12px;
+}
+.sidebar-bottom small,
+.workspace-switch small {
+  color: #6f7b66;
+  font-size: 10px;
+}
+.sidebar-note p {
+  color: #707d5f;
+}
+.info-note {
+  color: #677a4f;
+  font-size: 11px;
+}
+.upload-zone > span:last-of-type {
+  color: #6b7b59;
+  font-size: 11px;
+}
 @media (max-width: 760px) {
-  .bar-row { grid-template-columns: 80px minmax(24px, 1fr) 120px; }
-  .bar-amount, .bar-label, .stat-note, .stat-label { font-size: 10px; }
-  .page-heading .button { font-size: 10px; }
-  .panel-head { flex-wrap: wrap; }
+  .bar-row {
+    grid-template-columns: 80px minmax(24px, 1fr) 120px;
+  }
+  .bar-amount,
+  .bar-label,
+  .stat-note,
+  .stat-label {
+    font-size: 10px;
+  }
+  .page-heading .button {
+    font-size: 10px;
+  }
+  .panel-head {
+    flex-wrap: wrap;
+  }
 }

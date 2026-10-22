@@ -16,9 +16,18 @@ def db(tmp_path):
 
 @pytest.fixture
 def employee_data():
-    return {"employee_code": "EMP-001", "name": "Maya Shah", "email": "maya@example.test", "country": "IN",
-            "department": "Engineering", "job_title": "Software Engineer", "hired_on": "2024-01-01",
-            "currency": "INR", "annual_salary": "1200000.10", "status": "active"}
+    return {
+        "employee_code": "EMP-001",
+        "name": "Maya Shah",
+        "email": "maya@example.test",
+        "country": "IN",
+        "department": "Engineering",
+        "job_title": "Software Engineer",
+        "hired_on": "2024-01-01",
+        "currency": "INR",
+        "annual_salary": "1200000.10",
+        "status": "active",
+    }
 
 
 @pytest.fixture

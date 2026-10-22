@@ -1,4 +1,5 @@
 """Short-lived connections; each multi-statement write commits atomically."""
+
 import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
@@ -19,7 +20,9 @@ class Database:
             yield connection
         except sqlite3.OperationalError as error:
             if "locked" in str(error).lower() or "busy" in str(error).lower():
-                raise DomainError("Another update is finishing. Please retry shortly.", 503) from error
+                raise DomainError(
+                    "Another update is finishing. Please retry shortly.", 503
+                ) from error
             raise
         finally:
             connection.close()
@@ -30,9 +33,13 @@ class Database:
             connection.execute("PRAGMA journal_mode = WAL")
             version = connection.execute("PRAGMA user_version").fetchone()[0]
             if version == 0:
-                connection.executescript((Path(__file__).parent / "migrations/001_initial.sql").read_text())
+                connection.executescript(
+                    (Path(__file__).parent / "migrations/001_initial.sql").read_text()
+                )
             elif version != 1:
-                raise RuntimeError(f"Unsupported database schema {version}; expected 1.")
+                raise RuntimeError(
+                    f"Unsupported database schema {version}; expected 1."
+                )
 
     @contextmanager
     def transaction(self, *, write=True):

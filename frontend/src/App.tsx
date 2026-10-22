@@ -2,7 +2,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import {
   BarChart3,
   Check,
-  ChevronDown,
   Clock3,
   FileUp,
   LayoutDashboard,
@@ -208,7 +207,6 @@ export default function App() {
             <strong>ACME Organization</strong>
             <small>HR workspace</small>
           </span>
-          <ChevronDown size={15} />
         </div>
         <div className="nav-label">WORKSPACE</div>
         <nav aria-label="Main navigation">
