@@ -4,9 +4,21 @@ A Python/FastAPI + React/TypeScript salary workspace for an HR manager at a fict
 
 ## Delivery status
 
-Implemented and tested locally. **This is not yet a complete assessment submission:** a public Git repository, a verified live deployment, browser visual QA and a recorded video remain outstanding. No deployment or recording link is invented. See [delivery checklist](docs/DELIVERY_STATUS.md).
+Live application: https://acme-compensation.onrender.com
+Repository: https://github.com/RutvikJogdand/salary-manager
 
-The assessment leaves compensation meaning and reporting scope open. [Requirements](docs/REQUIREMENTS.md) were committed before code; [clarification questions](docs/CLARIFICATIONS.md) remain unanswered. Annual base salary, reports by separate currencies and structured reporting are explicitly proposed choices, not confirmed employer requirements.
+The application is deployed with persistent storage and private sign-in.
+The seed creates 10,000 fictional employees; the verified demo contained
+10,002 after a two-record import.
+
+GitHub CI passed for commit cd717c7:
+https://github.com/RutvikJogdand/salary-manager/actions/runs/40030509632
+
+Candidate code review, full keyboard/mobile checks and the demo recording
+remain outstanding. See docs/DELIVERY_STATUS.md.
+
+Annual gross base salary, separate currencies and structured reporting
+remain proposed assumptions pending employer clarification.
 
 ## What it does
 
@@ -63,13 +75,13 @@ npm --prefix frontend run build
 python scripts/benchmark.py
 ```
 
-Current validation: **51 Python tests and 5 React/formatting tests passed**, plus the TypeScript production build. The Python coverage report measures statement coverage; seed behavior has dedicated tests but the seed CLI is excluded from that percentage. See the actual scope and limitations in [validation notes](docs/VALIDATION.md). CI runs these tests/builds on push and pull requests when hosted on GitHub; CI itself has not yet run remotely.
+Current validation: **51 Python tests and 5 React/formatting tests passed**, plus the TypeScript production build. The Python coverage report measures statement coverage; seed behavior has dedicated tests but the seed CLI is excluded from that percentage. See the actual scope and limitations in [validation notes](docs/VALIDATION.md). CI runs these tests/builds on push and pull requests when hosted on GitHub; CI passed remotely for commit cd717c7.
 
 ## Deployment
 
 [Deployment instructions](docs/DEPLOYMENT.md) describe the Docker service and Render Blueprint. Use one service instance and a persistent disk. SQLite must not live on an ephemeral filesystem. A real production installation also needs individual identity/SSO, database-aware backups with restore drills and monitoring; the single HR identity is an assessment boundary.
 
-The Dockerfile and Render configuration are prepared but have not been built/deployed in this environment. Do not mistake a local preview or a checked-in Blueprint for a live deployment.
+Render built and deployed the Docker service with persistent storage. The candidate confirmed that saved data survived a server restart.
 
 ## Read the code in this order
 

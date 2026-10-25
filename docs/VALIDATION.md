@@ -21,11 +21,34 @@
 
 These measure Python service/database functions on this development machine, not HTTP, network, browser rendering, sustained traffic or cloud-host performance. Warm filesystem caches and machine characteristics matter. They establish that the chosen queries are practical for the supplied dataset, not a production SLA.
 
-## Verification limits
+## Deployed verification
 
-- The managed browser preview runs in a different environment. Its first attempt could not execute the host virtual environment; the portable launcher then reached system Python, which lacked Uvicorn. The preview did not become healthy. No browser screenshots, visual QA or browser end-to-end success is claimed.
-- Docker is not available here. Dockerfile/entrypoint/Render configuration are prepared and reviewed but not built or exercised on Render.
-- Render is installed; no Render deployment actions are exposed in this session's tool inventory. No live URL has been verified.
-- No external Git repository has been created/pushed, no remote CI result exists, and no video has been recorded.
+Previously verified GitHub CI run for cd717c7:
+https://github.com/RutvikJogdand/salary-manager/actions/runs/40030509632
 
-The live checks in `DEPLOYMENT.md` are mandatory before calling the assessment ready to submit.
+Candidate-performed checks:
+- Salary edits persisted after reopening, with audit history.
+- A stale second-tab edit was rejected and proposed input retained.
+- Invalid CSV rejected the whole batch.
+- A valid two-record import succeeded.
+- Repeating the import rejected duplicates.
+- Saved data survived a server restart.
+
+Direct browser checks in the previous session:
+- Authenticated overview showed 10,002 employees:
+  9,567 active and 435 inactive.
+- Searching ACME-00239 returned Aarav Brown.
+- The editor displayed CAD 133,750 and prior salary changes.
+- Tab/Enter navigation reached Employees and opened the editor.
+- Initial dialog focus was on Close; Escape dismissed the editor.
+- No employee records were changed during these direct checks.
+
+## Remaining verification limits
+
+Full keyboard navigation, focus trapping and mobile layout remain
+unverified. Basic keyboard checks do not establish full accessibility.
+Some CSV errors expose technical validation messages.
+
+No video has been recorded. Candidate code review and employer
+clarifications remain outstanding. No hiring email has been sent.
+These are previously observed results, not a new test run.

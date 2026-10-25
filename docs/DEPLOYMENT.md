@@ -2,13 +2,21 @@
 
 ## Current state
 
-No service has been created or paid plan purchased. Render installation is confirmed, but its deployment actions were not exposed to this session. Docker is also unavailable here, so the container build remains unverified. The production frontend and the Python API are independently built/tested; that is not a substitute for a deployed smoke test.
+Live URL: https://acme-compensation.onrender.com
+
+Render built and deployed the Docker service in Singapore using one
+Starter instance and a 1 GB persistent disk mounted at /var/data.
+SQLite uses /var/data/acme.sqlite3. The production password is private.
+APP_ORIGIN is the live HTTPS URL. Auto-deploy was off when checked.
+
+The candidate confirmed that saved data survived a server restart.
+See VALIDATION.md for verification scope and remaining checks.
 
 ## Intended topology
 
 One Docker web service serves the React assets and FastAPI API. One persistent disk is mounted at `/var/data`; SQLite uses `/var/data/acme.sqlite3`. The entrypoint creates ownership for UID 10001, drops privileges, optionally runs the explicit demo seed, then launches one worker. No real employee data is involved.
 
-Render supports persistent disks on paid services. Its default filesystem is ephemeral. Review current cost before provisioning: [Render persistent disks](https://render.com/docs/disks), [pricing](https://render.com/pricing). The checked-in `render.yaml` selects `starter` and a 1 GB disk; it is a proposed configuration, not a purchase or confirmed deployment.
+Render supports persistent disks on paid services. Its default filesystem is ephemeral. Review current cost before provisioning: [Render persistent disks](https://render.com/docs/disks), [pricing](https://render.com/pricing). The checked-in `render.yaml` selects `starter` and a 1 GB disk; this configuration has been deployed for the assessment.
 
 ## Before deploying
 

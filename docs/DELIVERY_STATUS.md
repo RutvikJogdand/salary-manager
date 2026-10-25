@@ -1,22 +1,26 @@
 # Submission checklist
 
-- [x] One-page requirements source committed before implementation.
-- [x] Python backend and React UI implemented.
-- [x] Relational storage and repeatable 10,000-employee seed.
-- [x] Core unit/integration/component tests pass locally.
-- [x] TypeScript production build succeeds.
-- [x] Real incremental local Git commits.
-- [x] Architecture, design trade-offs, performance notes and honest AI-use record.
-- [x] Deployment configuration and demo recording script prepared.
-- [ ] Business-scope clarification answers received and incorporated.
-- [ ] Candidate reviews the implementation and can explain the main paths.
-- [ ] Git repository published and link checked.
-- [ ] Docker image built and verified.
-- [ ] Render deployed with persistent storage and private reviewer access.
-- [ ] Browser visual, responsive and keyboard checks completed.
-- [ ] Restart persistence and deployed smoke checks completed.
-- [ ] Video actually recorded and link checked.
-- [ ] README updated with verified live/repository/video URLs.
-- [ ] Candidate replies to the hiring email with the submission.
+- [x] Requirements committed before implementation.
+- [x] Python backend and React frontend implemented.
+- [x] Relational storage and deterministic 10,000-employee seed.
+- [x] 51 Python tests and 5 frontend tests passed.
+- [x] Production frontend build passed.
+- [x] Incremental Git history published on GitHub.
+- [x] GitHub CI passed for cd717c7.
+- [x] Docker service deployed on Render with persistent storage.
+- [x] Candidate verified salary changes and audit history.
+- [x] Candidate verified stale-edit rejection.
+- [x] Candidate verified invalid, valid and duplicate CSV imports.
+- [x] Candidate confirmed data survived a server restart.
+- [x] Basic direct browser and keyboard checks completed.
+- [ ] Full keyboard and mobile layout checks completed.
+- [ ] Candidate reviews and can explain the implementation.
+- [ ] Employer clarification answers incorporated.
+- [ ] Demo video recorded and reviewer access checked.
+- [ ] Recording URL added to README.
+- [ ] Private application access provided to the reviewer.
+- [ ] Submission email sent by the candidate.
 
-No hiring email has been sent. The package is implementation work in progress toward the complete submission, not evidence that deployment or a video already exists.
+No demo recording or hiring email has been completed.
+See VALIDATION.md for the distinction between candidate-reported
+checks and directly observed browser checks.
